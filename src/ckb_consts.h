@@ -1,7 +1,8 @@
-#ifndef CKB_CONSTS_H_
-#define CKB_CONSTS_H_
+#ifndef CKB_C_STDLIB_CKB_CONSTS_H_
+#define CKB_C_STDLIB_CKB_CONSTS_H_
 
 #define SYS_exit 93
+#define SYS_ckb_load_transaction 2051
 #define SYS_ckb_load_script 2052
 #define SYS_ckb_load_tx_hash 2061
 #define SYS_ckb_load_script_hash 2062
@@ -19,6 +20,7 @@
 #define CKB_SUCCESS 0
 #define CKB_INDEX_OUT_OF_BOUND 1
 #define CKB_ITEM_MISSING 2
+#define CKB_LENGTH_NOT_ENOUGH 3
 
 #define CKB_SOURCE_INPUT 1
 #define CKB_SOURCE_OUTPUT 2
@@ -42,4 +44,4 @@
 #define CKB_INPUT_FIELD_OUT_POINT 0
 #define CKB_INPUT_FIELD_SINCE 1
 
-#endif /* CKB_CONSTS_H_ */
+#endif /* CKB_C_STDLIB_CKB_CONSTS_H_ */
