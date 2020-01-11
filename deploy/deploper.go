@@ -50,7 +50,8 @@ func main() {
 	change, err := key.Script(scripts)
 
 	capacity := uint64(dataInfo.Size()/1000+1) * 1000 * uint64(math.Pow10(8))
-	fee := uint64(9000)
+	// fee rate lower than min_fee_rate: 1000 shannons/KB
+	fee := uint64(40000)
 
 	cellCollector := utils.NewCellCollector(client, change, capacity+fee)
 	cells, total, err := cellCollector.Collect()
@@ -59,7 +60,7 @@ func main() {
 	}
 
 	if total < capacity+fee {
-		log.Fatalf("insufficient capacity: %d", total)
+		log.Fatalf("insufficient capacity: %d < %d", total, capacity+fee)
 	}
 
 	tx := transaction.NewSecp256k1SingleSigTx(scripts)
